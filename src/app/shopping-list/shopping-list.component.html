@@ -1,0 +1,11 @@
+<section class="col-sm">
+  <p class="my-3">
+    <strong>Shopping List</strong></p>
+  
+  <mat-list role="list" dense>
+    <mat-list-item role="listitem" *ngFor="let item of recipesToBuy">
+        <mat-checkbox>{{ item.quantity }} {{ item.name }} {{ item.type }}</mat-checkbox> 
+    </mat-list-item>
+  </mat-list>
+
+  </section>

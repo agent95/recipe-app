@@ -1,0 +1,41 @@
+<section class="col-sm">
+    <p class="my-3"><strong>Recipes you can try</strong><small> with available ingredients</small></p>
+  
+  <mat-accordion>
+      <mat-expansion-panel *ngFor="let recipe of canTryRecipes">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          {{ recipe.name }}
+          </mat-panel-title>
+          <mat-panel-description>
+            <!-- Text Description -->
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="row">
+           <div *ngIf="recipe.imageURL" class="col-sm mb-2">
+            <img src="assets/images/{{recipe.imageURL}}" class="w-100">
+          </div>
+          <div class="col-sm">
+            <strong>Ingredients:</strong>
+            <ul>
+              <li *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient.quantity}} {{ingredient.name}} {{ingredient.type}}
+              </li>
+            </ul>
+            <div>
+              <strong class="d-block">Steps: </strong>
+              <ol>
+                <li *ngFor="let step of recipe.steps">
+                  {{ step }}
+                </li>
+              </ol>
+            </div>
+            </div>
+        </div>
+       
+        
+      </mat-expansion-panel>
+    </mat-accordion>
+  
+  </section>
+  
